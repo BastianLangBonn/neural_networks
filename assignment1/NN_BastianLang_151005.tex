@@ -68,6 +68,137 @@
 
 \maketitle % Print the title
 
+\section{Outline Chapter I}
+\begin{itemize}
+\item What is a neural network?
+
+\begin{itemize}
+\item Motivated by human brain
+\item complex, nonlinear, parallel
+\item Benefits of neural networks
+
+\begin{itemize}
+\item Nonlinearity
+\item Input-output mapping
+\item Adaptivity
+\item Evidential Response
+\item Contextual information
+\item Fault tolerance
+\item VLSI implementability
+\item Uniformity of analysis and design
+\item Neurobiological analogy
+\end{itemize}
+
+\end{itemize}
+
+\item Human brain
+
+\begin{itemize}
+\item about 10 billion neurons
+\item about 60 trillion synapses/connections
+\item energetic efficient
+\item chemical synapses: electrical signal $->$ chemical signal $->$ electrical signal
+\item plasticity via new connections and modification of existing ones
+\item structural level of organization
+
+\end{itemize}
+
+\item Models of a neuron
+
+\begin{itemize}
+\item Neuron: Information-processing unit
+\item Three basic elements:
+\begin{itemize}
+\item Set of synapses
+\item Adder
+\item Activation function/squashing function
+\end{itemize}
+
+\item Types of activation function
+\begin{itemize}
+\item Threshold function (McCulloch-Pitts model)
+\item Piecewise-linear function
+\item Sigmoid function
+\end{itemize}
+
+\item Stochastic model of a neuron
+\end{itemize}
+
+\item Neural Networks viewed as directed graphs
+\begin{itemize}
+	\item Block diagram: functional description
+	\item Signal-flow graph: signal flow
+	\begin{itemize}
+		\item Rule1: Signal flows in direction defined by arrow
+		\item Rule2: Node signal equals sum of entering signals
+		\item Rule3: Signal of node is transmitted to each outgoing link
+	\end{itemize}
+	\item Architectural graph: network layout
+\end{itemize}
+
+\item Feedback
+	\begin{itemize}
+		\item Feedback: Output influences input
+		\item Recurrent networks
+		\item closed-loop operator: $\frac{A}{1-AB}$
+		\item open-loop operator: $AB$
+	\end{itemize}
+
+\item Network architectures
+	\begin{itemize}
+		\item Single-layer feedforward networks
+		\begin{itemize}
+			\item No hidden layer
+		\end{itemize}
+		\item Multi-layer feedforward networks
+		\begin{itemize}
+			\item Contains hidden layer
+		\end{itemize}
+		\item Recurrent Networks
+		\begin{itemize}
+			\item At least one feedback loop
+		\end{itemize}
+	\end{itemize}
+
+
+\item Knowledge representation
+\begin{itemize}
+	\item Training via input-output pairs
+	\item Learning: applying algorithm on a training set
+	\item Generalization: test learned model on test set
+	\item Rule1: Similar input from similar classes should be classified into the same category
+	\item Rule2: Items of different classes should be given different representations in the network.
+	\item Rule3: The more important a feature, the more neurons to represent it
+	\item Rule4: Prior information should be built into the network beforehand
+	\item How to build prior information into neural network design
+	\begin{itemize}
+		\item No well-defined rules
+		\item receptive fields
+		\item weight-sharing
+	\end{itemize}
+	\item How to build invariances into neural network design
+	\begin{itemize}
+		\item Invariance by structure
+		\item Invariance by training
+		\item Invariant feature space
+	\end{itemize}
+\end{itemize}
+
+\item Artificial intelligence and neural networks
+\begin{itemize}
+	\item Representation
+	\item Reasoning
+	\item Learning
+	\item Level of explanation
+	\item Processing style
+	\item Representational structure
+\end{itemize}
+
+\item Historical notes
+
+\end{itemize}
+
+
 \section{From Haykin's book, Chapter 1 problems - "Models of a neuron", solve any 2 out of 11
 (1.1 to 1.11).}
 

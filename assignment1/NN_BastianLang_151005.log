@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.3.18)  6 OCT 2015 14:26
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.4.18)  9 OCT 2015 23:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **NN_BastianLang_151005.tex
 (./NN_BastianLang_151005.tex
 LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 78 languages loaded.
+Babel <3.9h> and hyphenation patterns for 9 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrartcl.cls
 Document Class: scrartcl 2013/12/19 v3.12 KOMA-Script document class (article)
 (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrkbase.sty
@@ -577,100 +577,105 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 70.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+LaTeX Font Info:    Try loading font information for TS1+futs on input line 73.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/fourier/ts1futs.fd
+File: ts1futs.fd 2004/03/26 Fontinst v1.926 font definitions for TS1/futs.
+)
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 77.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 76.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 77.
+(Font)              scaled to size 10.07397pt on input line 100.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 77.
+(Font)              scaled to size 7.63599pt on input line 100.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 77.
+(Font)              scaled to size 5.51999pt on input line 100.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 77.
+(Font)              scaled to size 10.07397pt on input line 100.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 77.
+(Font)              scaled to size 7.63599pt on input line 100.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 77.
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--78
-
- []
+(Font)              scaled to size 5.51999pt on input line 100.
+ [1
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 77--78
-
- []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--80
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+Underfull \hbox (badness 10000) in paragraph at lines 208--209
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--88
+Underfull \hbox (badness 10000) in paragraph at lines 208--209
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 210--211
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--88
+Underfull \hbox (badness 10000) in paragraph at lines 218--219
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--94
+Underfull \hbox (badness 10000) in paragraph at lines 218--219
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--94
+Underfull \hbox (badness 10000) in paragraph at lines 224--225
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--96
-
- []
-
-[1
-
-
-
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 103--104
+Underfull \hbox (badness 10000) in paragraph at lines 224--225
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 103--104
+Underfull \hbox (badness 10000) in paragraph at lines 226--227
 
  []
 
-<1_12.jpeg, id=12, 639.38875pt x 585.18625pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--235
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--235
+
+ []
+
+<1_12.jpeg, id=17, 639.38875pt x 585.18625pt>
 File: 1_12.jpeg Graphic file (type jpg)
  <use 1_12.jpeg>
-Package pdftex.def Info: 1_12.jpeg used on input line 114.
+Package pdftex.def Info: 1_12.jpeg used on input line 245.
 (pdftex.def)             Requested size: 209.12778pt x 191.39764pt.
 
-<1_16.png, id=13, 558.085pt x 599.23875pt>
+<1_16.png, id=18, 558.085pt x 599.23875pt>
 File: 1_16.png Graphic file (type png)
  <use 1_16.png>
-Package pdftex.def Info: 1_16.png used on input line 123.
+Package pdftex.def Info: 1_16.png used on input line 254.
 (pdftex.def)             Requested size: 209.12778pt x 224.5494pt.
- [2 <./1_12.jpeg>]
-[3 <./1_16.png>] (./NN_BastianLang_151005.aux)
+ [4] [5 <./1_12.jpeg> <./1_16.png>] (./NN_BastianLang_151005.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5174 strings out of 493304
- 74652 string characters out of 6139871
- 175518 words of memory out of 5000000
- 8496 multiletter control sequences out of 15000+600000
- 93938 words of font info for 102 fonts, out of 8000000 for 9000
- 957 hyphenation exceptions out of 8191
- 47i,11n,47p,259b,231s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 5205 strings out of 494935
+ 75128 string characters out of 6178122
+ 173657 words of memory out of 5000000
+ 8293 multiletter control sequences out of 15000+600000
+ 94857 words of font info for 107 fonts, out of 8000000 for 9000
+ 36 hyphenation exceptions out of 8191
+ 47i,10n,47p,259b,330s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/fourier/fourier-mex.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/fourier/fourier-mlit.pfb></usr/share/texlive/texmf-d
@@ -678,10 +683,10 @@ ist/fonts/type1/public/fourier/fourier-ms.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/adobe/utopia/putb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ad
 obe/utopia/putr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/p
 utri8a.pfb>
-Output written on NN_BastianLang_151005.pdf (3 pages, 144188 bytes).
+Output written on NN_BastianLang_151005.pdf (5 pages, 149073 bytes).
 PDF statistics:
- 43 PDF objects out of 1000 (max. 8388607)
- 28 compressed objects within 1 object stream
+ 49 PDF objects out of 1000 (max. 8388607)
+ 32 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
