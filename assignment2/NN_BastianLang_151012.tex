@@ -72,6 +72,15 @@
 end of chapter) and summarize or sketch your insights in mind-map or an outline or a
 summary.}
 
+See figure \ref{fig1}.
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=1\textheight, angle=90]{mindmap.jpeg}
+	\caption{Mindmap}
+	\label{fig1}
+\end{figure}
+
 \section{Design a perceptron that computes the following Boolean function:}
 
 \subsection{$f(x_1 , x_2 ) = NOT(x_1 AND x_2 )$}
@@ -85,12 +94,63 @@ $w_2 > -w_0$\\
 $0 > -w_0$\\\\
 
 This is true for $w_0 = 0.2, w_1 = w_2 = -0.15$\\
+(See figure \ref{figNotAnd})
 
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.5\textheight]{NotAnd.jpeg}
+	\caption{NotAnd}
+	\label{figNotAnd}
+\end{figure}
 
 \subsection{$f(x_1 , x_2 , x_3 ) = (x_1 AND x_2 ) OR x_3$}
 
 The SLP function does look like:\\
 $STEP(w_1x_1 + w_2x_2 + w_3x_3 + w_0) = y$\\\\
 The following equations have to hold true:\\
+$w_1 + w_2 + w_3 > -w_0$\\
+$w_2 + w_3 > -w_0$\\
+$w_1 + w_3 > -w_0$\\
+$w_3 > -w_0$\\
+$w_1 + w_2 > -w_0$\\
+$w_1 < -w_0$\\
+$w_2 < -w_0$\\\\
+
+This is true for $w_0 = -0.2, w_1 = w_2 = 0.15, w_3 = 0.3$\\
+(See figure \ref{figAndOr})
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.5\textheight]{AndOr.jpeg}
+	\caption{AndOr}
+	\label{figAndOr}
+\end{figure}
+
+\section{}
+
+\subsection{A basic limitation of the perceptron is that it cannot implement the EXCLUSIVE OR
+function. Explain the reason for this limitation.}
+
+For XOR, the following equations have to be true:\\
+$w_1 + w_2 < -w_0$\\
+$0 < -w_0$\\
+$w_1 > -w_0$\\
+$w_2 > -w_0$\\\\
+
+From these equations:\\
+$w_0 > 0 \rightarrow w_1 > 0 \land w_2 > 0$\\
+$w_1 + w_2 < -w_0 < w_1 \land w_1 + w_2 < -w_0 < w_2$\\
+$\rightarrow w_1 < 0 \land w_2 < 0$\\\\
+
+This contradiction shows that XOR is not solvable using a Single Layer Perceptron.
+
+\subsection{Show that neural networks with one hidden layer can describe all Boolean functions.}
+
+Every boolean function can be written in KNF, i.e. a conjunction of disjunctions.\\
+The connection from the input layer to the hidden layer can be seen as n SLPs, where n is the number of neurons in the hidden layer. So it would be possible to let each of those SLPs represent one disjunction.\\
+The connection from the hidden layer to the single output neuron can again be seen as a single SLP.\\
+This SLP is able to represent the conjunction of all former disjunctions.\\
+Thus a network with one hidden layer is able to describe any boolean function because any boolean function can be written as a conjunction of disjunctions.
+
 
 \end{document}
