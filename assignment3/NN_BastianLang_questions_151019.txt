@@ -1,0 +1,5 @@
+How many active neurons may there be at any given time step in competitive learning? - 1
+
+What is another name of the delta rule? - Widrow-Hoff rule
+
+What are the presynaptic and postsynaptic signals of the jth synapse of neuron k? - The input signal x_j and the induced local field v_k of neuron k
