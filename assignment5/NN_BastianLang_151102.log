@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.4.18)  31 OCT 2015 17:35
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.4.18)  7 NOV 2015 18:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**NN_BastianLang_151026.tex
-(./NN_BastianLang_151026.tex
+**NN_BastianLang_151102.tex
+(./NN_BastianLang_151102.tex
 LaTeX2e <2011/06/27>
 Babel <3.9h> and hyphenation patterns for 9 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrartcl.cls
@@ -454,8 +454,8 @@ Class scrartcl Warning: Usage of package `fancyhdr' together
 \f@ncyO@olf=\skip61
 \f@ncyO@orf=\skip62
 )
-(./NN_BastianLang_151026.aux)
-\openout1 = `NN_BastianLang_151026.aux'.
+(./NN_BastianLang_151102.aux)
+\openout1 = `NN_BastianLang_151102.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
 LaTeX Font Info:    ... okay on input line 69.
@@ -604,100 +604,99 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for TS1+futs on input line 80.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] <04.jpg, id=7, 2561.57pt x
+ 3523.1625pt>
+File: 04.jpg Graphic file (type jpg)
+
+<use 04.jpg>
+Package pdftex.def Info: 04.jpg used on input line 81.
+(pdftex.def)             Requested size: 417.05836pt x 573.60919pt.
 
 
-(/usr/share/texlive/texmf-dist/tex/latex/fourier/ts1futs.fd
-File: ts1futs.fd 2004/03/26 Fontinst v1.926 font definitions for TS1/futs.
-)
-LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 87.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 100.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 100.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 100.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 100.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 100.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 100.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 115.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 115.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 115.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 115.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 115.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 115.
- [2] [3]
-Overfull \hbox (0.9417pt too wide) in paragraph at lines 158--159
-[]\T1/futs/m/n/10.95 I cre-ated a Python pro-gram that cre-ates some (15) rect-
-an-gles and for ev-ery rect-an-gle 50 points.
- []
+LaTeX Warning: Float too large for page by 5.48897pt on input line 84.
 
-[4]
-Overfull \hbox (339.14017pt too wide) in paragraph at lines 185--186
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][] 
- []
-
-[5]
-Overfull \hbox (38.49454pt too wide) in paragraph at lines 227--228
-[][][][][][][][][][][][] 
- []
+<05.jpg, id=8, 2561.57pt x 3523.1625pt>
+File: 05.jpg Graphic file (type jpg)
+ <use 05.jpg>
+Package pdftex.def Info: 05.jpg used on input line 88.
+(pdftex.def)             Requested size: 417.05836pt x 573.60919pt.
 
 
-Overfull \hbox (142.56418pt too wide) in paragraph at lines 239--240
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
+LaTeX Warning: Float too large for page by 5.48897pt on input line 91.
+
+<06.jpg, id=9, 2561.57pt x 3523.1625pt>
+File: 06.jpg Graphic file (type jpg)
+ <use 06.jpg>
+Package pdftex.def Info: 06.jpg used on input line 95.
+(pdftex.def)             Requested size: 417.05836pt x 573.60919pt.
 
 
-Overfull \hbox (125.21924pt too wide) in paragraph at lines 246--247
-[][][][][][][][][][][] 
- []
+LaTeX Warning: Float too large for page by 5.48897pt on input line 98.
+
+<07.jpg, id=10, 2561.57pt x 3523.1625pt>
+File: 07.jpg Graphic file (type jpg)
+ <use 07.jpg>
+Package pdftex.def Info: 07.jpg used on input line 102.
+(pdftex.def)             Requested size: 417.05836pt x 573.60919pt.
 
 
-Overfull \hbox (67.40277pt too wide) in paragraph at lines 249--250
-[][][][][][][][][][][] 
- []
+LaTeX Warning: Float too large for page by 5.48897pt on input line 105.
+
+<08.jpg, id=11, 2561.57pt x 3523.1625pt>
+File: 08.jpg Graphic file (type jpg)
+ <use 08.jpg>
+Package pdftex.def Info: 08.jpg used on input line 109.
+(pdftex.def)             Requested size: 417.05836pt x 573.60919pt.
 
 
-Overfull \hbox (50.05783pt too wide) in paragraph at lines 255--256
-[][][][][][][][][][][][] 
- []
+LaTeX Warning: Float too large for page by 5.48897pt on input line 112.
 
-[6] <ex3.jpg, id=25, 433.62pt x 289.08pt>
-File: ex3.jpg Graphic file (type jpg)
- <use ex3.jpg>
-Package pdftex.def Info: ex3.jpg used on input line 278.
-(pdftex.def)             Requested size: 417.05836pt x 278.05177pt.
- [7 <./ex3.jpg>]
-(./NN_BastianLang_151026.aux) ) 
+<09.jpg, id=12, 2561.57pt x 3523.1625pt>
+File: 09.jpg Graphic file (type jpg)
+ <use 09.jpg>
+Package pdftex.def Info: 09.jpg used on input line 116.
+(pdftex.def)             Requested size: 417.05836pt x 573.60919pt.
+
+
+LaTeX Warning: Float too large for page by 5.48897pt on input line 119.
+
+<ex3_1.jpg, id=13, 2157.05875pt x 2028.57875pt>
+File: ex3_1.jpg Graphic file (type jpg)
+ <use ex3_1.jpg>
+Package pdftex.def Info: ex3_1.jpg used on input line 128.
+(pdftex.def)             Requested size: 417.05836pt x 392.2128pt.
+
+<ex3_2a.jpg, id=14, 2561.57pt x 3523.1625pt>
+File: ex3_2a.jpg Graphic file (type jpg)
+ <use ex3_2a.jpg>
+Package pdftex.def Info: ex3_2a.jpg used on input line 139.
+(pdftex.def)             Requested size: 417.05836pt x 573.60919pt.
+
+
+LaTeX Warning: Float too large for page by 5.48897pt on input line 142.
+
+<ex3_2b.jpg, id=15, 2365.83875pt x 1446.40375pt>
+File: ex3_2b.jpg Graphic file (type jpg)
+ <use ex3_2b.jpg>
+Package pdftex.def Info: ex3_2b.jpg used on input line 148.
+(pdftex.def)             Requested size: 417.05836pt x 254.97835pt.
+ [2] [3 <./04.jpg>] [4 <./05.jpg>] [5 <./06.jpg>] [6 <./07.jpg>] [7 <./08.jpg>]
+ [8 <./09.jpg>] [9 <./ex3_1.jpg>] [10 <./ex3_2a.jpg>] [11 <./ex3_2b.jpg>]
+(./NN_BastianLang_151102.aux) ) 
 Here is how much of TeX's memory you used:
- 6435 strings out of 494935
- 93342 string characters out of 6178122
- 213662 words of memory out of 5000000
- 9504 multiletter control sequences out of 15000+600000
- 116185 words of font info for 139 fonts, out of 8000000 for 9000
+ 6379 strings out of 494935
+ 92447 string characters out of 6178122
+ 191744 words of memory out of 5000000
+ 9471 multiletter control sequences out of 15000+600000
+ 68080 words of font info for 67 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 47i,11n,47p,695b,1480s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 47i,10n,47p,259b,233s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/b
-ase/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/fourier/fourier-ms
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on NN_BastianLang_151026.pdf (7 pages, 102867 bytes).
+ase/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb>
+Output written on NN_BastianLang_151102.pdf (11 pages, 1533823 bytes).
 PDF statistics:
- 46 PDF objects out of 1000 (max. 8388607)
- 31 compressed objects within 1 object stream
+ 54 PDF objects out of 1000 (max. 8388607)
+ 30 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
