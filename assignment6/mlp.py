@@ -40,31 +40,60 @@ class MLP:
         return result            
             
     def propagate_input(self, net_input):
-        hidden_output = []
+
+        # propagate through hidden layer
+        self.hidden_induced_fields = []
+        self.hidden_output = []
         for i in range(len(self.hidden_layer)):
             # compute input to hidden layer
             # BIAS
             induced_local_field = self.input_hidden_weights[i][0]
             for j in range(len(net_input) ):
                 induced_local_field += net_input[j] * self.input_hidden_weights[i][j+1]
+            self.hidden_induced_fields.append(induced_local_field)
             # compute output of hidden layer
-            hidden_output.append(self.hidden_layer[i].compute_output(induced_local_field))
+            self.hidden_output.append(self.hidden_layer[i].compute_output(induced_local_field))
         
-        output_output = []
+        # propagate through output layer
+        self.output_induced_fields = []
+        self.output_output = []
         for i in range(len(self.output_layer)):
             #BIAS
             induced_local_field = self.hidden_output_weights[i][0]
-            for j in range(len(hidden_output)):
-                induced_local_field += hidden_output[j] * self.hidden_output_weights[i][j+1]
-            #output_induced_field.append(induced_local_field)
-            output_output.append(self.output_layer[i].compute_output(induced_local_field))
+            for j in range(len(self.hidden_output)):
+                induced_local_field += self.hidden_output[j] * self.hidden_output_weights[i][j+1]
+            self.output_induced_fields.append(induced_local_field)
+            self.output_output.append(self.output_layer[i].compute_output(induced_local_field))
         
-        return output_output
+        return self.output_output
+        
+    def backprop(self, input_vector, desired_output, learning_rate):
+        # Compute output error
+        output_vector = self.propagate_input(input_vector)
+        output_errors = []
+        for i in range(len(output_vector)):
+            output_errors.append(output_vector[i] - desired_output[i])
+        print "error: ", output_errors
+                
+        # Compute output delta
+        delta_output = []
+        for i in range(len(output_errors)):
+            derivative = self.output_layer[i].derivative_activation(self.output_induced_fields[i])
+            delta_output.append(derivative * output_errors[i])
+        print "delta output: ", delta_output
             
+        # Compute hidden delta
+        delta_hidden = []
+        for i in range(len(self.hidden_output_weights)):
+            
+
             
 class Neuron:
     def compute_output(self, induced_local_field):
         return 1 / (1 + np.exp((-1) * induced_local_field))
+        
+    def derivative_activation(self, induced_local_field):
+        return self.compute_output(induced_local_field) * (1 - self.compute_output(induced_local_field))
         
         
 mlp = MLP(2, 2, 1, 0)
@@ -77,4 +106,6 @@ mlp2 = MLP(2, 2, 1, 0.5)
 print "input-hidden weights", mlp2.input_hidden_weights
 print "hidden-output weights", mlp2.hidden_output_weights
 print mlp2.propagate_input([1,1])
+
+mlp.backprop([1,1], [0], 0.2)
 
