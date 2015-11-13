@@ -9,103 +9,123 @@ import numpy as np
 
 class MLP:
     
-    hidden_layer = []
-    output_layer = []
-    input_hidden_weights = []
-    hidden_output_weights = []
+    input_neurons = []
+    output_neurons = []
+    hidden_neurons = []
     
-    def __init__(self, number_input, number_hidden, number_output, initial_weight_value):
-        self.number_of_inputs = number_input
-        self.hidden_layer = self.create_layer(number_hidden)
-        self.output_layer = self.create_layer(number_output)
-        self.input_hidden_weights = self.create_weights(number_input, number_hidden, initial_weight_value)
-        self.hidden_output_weights = self.create_weights(number_hidden, number_output, initial_weight_value)
+    def __init__(self, number_input, number_hidden, number_output, initial_weight):
+        print "Constructor of MLP not yet implemented"
+        for i in range(number_input):
+            self.input_neurons.append(InputNeuron())
         
-    
-    def create_weights(self, number_origin_layer, number_target_layer, initial_weight_value):
-        weight_matrix = []
-        for i in range(number_target_layer):
-            weights = []
-            #BIAS
-            weights.append(initial_weight_value)
-            for j in range(number_origin_layer):
-                weights.append(initial_weight_value)
-            weight_matrix.append(weights)
-        return weight_matrix
+        self.bias = BiasNeuron()
+        
+        # create hidden layer
+        for i in range(number_hidden):
+            hidden_neuron = Neuron()
+            self.hidden_neurons.append(hidden_neuron)
+            # add connections to input layer
+            for input_neuron in self.input_neurons:
+                hidden_neuron.add_incomming_neuron([input_neuron, initial_weight])
+                input_neuron.add_outgoing_neuron(hidden_neuron)
+            # add BIAS connection
+            hidden_neuron.add_incomming_neuron([self.bias, initial_weight])
+            self.bias.add_outgoing_neuron(hidden_neuron)
             
-    def create_layer(self, number_of_neurons):
-        result = []
-        for i in range(number_of_neurons):
-            result.append(Neuron())
-        return result            
-            
-    def propagate_input(self, net_input):
-
-        # propagate through hidden layer
-        self.hidden_induced_fields = []
-        self.hidden_output = []
-        for i in range(len(self.hidden_layer)):
-            # compute input to hidden layer
-            # BIAS
-            induced_local_field = self.input_hidden_weights[i][0]
-            for j in range(len(net_input) ):
-                induced_local_field += net_input[j] * self.input_hidden_weights[i][j+1]
-            self.hidden_induced_fields.append(induced_local_field)
-            # compute output of hidden layer
-            self.hidden_output.append(self.hidden_layer[i].compute_output(induced_local_field))
-        
-        # propagate through output layer
-        self.output_induced_fields = []
-        self.output_output = []
-        for i in range(len(self.output_layer)):
-            #BIAS
-            induced_local_field = self.hidden_output_weights[i][0]
-            for j in range(len(self.hidden_output)):
-                induced_local_field += self.hidden_output[j] * self.hidden_output_weights[i][j+1]
-            self.output_induced_fields.append(induced_local_field)
-            self.output_output.append(self.output_layer[i].compute_output(induced_local_field))
-        
-        return self.output_output
-        
-    def backprop(self, input_vector, desired_output, learning_rate):
-        # Compute output error
-        output_vector = self.propagate_input(input_vector)
-        output_errors = []
-        for i in range(len(output_vector)):
-            output_errors.append(output_vector[i] - desired_output[i])
-        print "error: ", output_errors
+        # create output layer
+        for i in range(number_output):
+            output_neuron = Neuron()
+            self.output_neurons.append(output_neuron)
+            # add connections to hidden layer
+            for hidden_neuron in self.hidden_neurons:
+                output_neuron.add_incomming_neuron([hidden_neuron, initial_weight])
+                hidden_neuron.add_outgoing_neuron(output_neuron)
+            # add BIAS connection
+            output_neuron.add_incomming_neuron([self.bias, initial_weight])
+            self.bias.add_outgoing_neuron(output_neuron)
                 
-        # Compute output delta
-        delta_output = []
-        for i in range(len(output_errors)):
-            derivative = self.output_layer[i].derivative_activation(self.output_induced_fields[i])
-            delta_output.append(derivative * output_errors[i])
-        print "delta output: ", delta_output
-            
-        # Compute hidden delta
-        delta_hidden = []
-        for i in range(len(self.hidden_output_weights)):
+    def propagate(self, net_input):
+        
+        for i in range(len(net_input)):
+            self.input_neurons[i].set_last_output(net_input[i])
+
+        queue = []            
+        for hidden in self.hidden_neurons:
+            queue.append(hidden)
+        
+        index = 0
+        while(index < len(queue)):
+            neuron = queue[index]
+            neuron.compute_induced_local_field()
+            neuron.activate()
+            for outgoing in neuron.outgoing_neurons:
+                if(not queue.__contains__(outgoing)):
+                    queue.append(outgoing)
+            index += 1
+          
+        # get output
+        result = []
+        for output in self.output_neurons:
+            result.append(output.last_output)
+        return result
+        
+    def backpropagate(self, desired):
+        
             
 
-            
 class Neuron:
-    def compute_output(self, induced_local_field):
-        return 1 / (1 + np.exp((-1) * induced_local_field))
-        
-    def derivative_activation(self, induced_local_field):
-        return self.compute_output(induced_local_field) * (1 - self.compute_output(induced_local_field))
-        
-        
-mlp = MLP(2, 2, 1, 0)
-print "input-hidden weights", mlp.input_hidden_weights
-print "hidden-output weights", mlp.hidden_output_weights
-#print mlp.input_hidden_weights
-print mlp.propagate_input([1,1])
+    
+    last_induced_local_field = 0
+    last_output = 0
+    last_delta = 0
+    incomming_neurons = []
+    outgoing_neurons = []
+    
+    def compute_induced_local_field(self):
+        induced_local_field = 0
+        for connection in self.incomming_neurons:
+            activation = connection[0].last_output
+            induced_local_field += activation * connection[1]
+        self.last_induced_local_field = induced_local_field
+        return self.last_induced_local_field
 
-mlp2 = MLP(2, 2, 1, 0.5)
-print "input-hidden weights", mlp2.input_hidden_weights
-print "hidden-output weights", mlp2.hidden_output_weights
-print mlp2.propagate_input([1,1])
+    def activate(self):
+        self.last_output = 1 / (1 + np.exp((-1) * self.last_induced_local_field))
+        return self.last_output
+        
+    def set_delta(self, delta):
+        self.last_delta = delta
+        
+    def set_last_output(self, output):
+        self.last_output = output
+        
+    def add_incomming_neuron(self, incomming_neuron):
+        self.incomming_neurons.append(incomming_neuron)
+    
+    def add_outgoing_neuron(self, outgoing_neuron):
+        self.outgoing_neurons.append(outgoing_neuron)
+        
+        
+class InputNeuron(Neuron):
+    
+    def activate(self):
+        return self.last_output
+        
+    def compute_induced_local_field(self):
+        return self.last_induced_local_field
+        
+class BiasNeuron(Neuron):
+    
+    def __init__(self):
+        self.last_output = 1
+        
+    def activate(self):
+        return 1
+        
 
-mlp.backprop([1,1], [0], 0.2)
+mlp = MLP(2,2,1,0)
+print "input neurons: ", mlp.input_neurons
+print "hidden neurons: ", mlp.hidden_neurons
+print "output neurons: ", mlp.output_neurons
 
+print "Propagate 1,1: ", mlp.propagate((0,0))
