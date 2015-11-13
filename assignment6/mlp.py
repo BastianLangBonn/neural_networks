@@ -14,7 +14,6 @@ class MLP:
     hidden_neurons = []
     
     def __init__(self, number_input, number_hidden, number_output, initial_weight):
-        print "Constructor of MLP not yet implemented"
         for i in range(number_input):
             self.input_neurons.append(InputNeuron())
         
@@ -26,11 +25,13 @@ class MLP:
             self.hidden_neurons.append(hidden_neuron)
             # add connections to input layer
             for input_neuron in self.input_neurons:
-                hidden_neuron.add_incomming_neuron([input_neuron, initial_weight])
-                input_neuron.add_outgoing_neuron(hidden_neuron)
+                connection = Connection(input_neuron, hidden_neuron, initial_weight)
+                hidden_neuron.add_incomming_connection(connection)
+                input_neuron.add_outgoing_connection(connection)
             # add BIAS connection
-            hidden_neuron.add_incomming_neuron([self.bias, initial_weight])
-            self.bias.add_outgoing_neuron(hidden_neuron)
+            connection = Connection(self.bias, hidden_neuron, initial_weight)
+            hidden_neuron.add_incomming_connection(connection)
+            self.bias.add_outgoing_connection(connection)
             
         # create output layer
         for i in range(number_output):
@@ -38,11 +39,13 @@ class MLP:
             self.output_neurons.append(output_neuron)
             # add connections to hidden layer
             for hidden_neuron in self.hidden_neurons:
-                output_neuron.add_incomming_neuron([hidden_neuron, initial_weight])
-                hidden_neuron.add_outgoing_neuron(output_neuron)
+                connection = Connection(hidden_neuron, output_neuron, initial_weight)
+                output_neuron.add_incomming_connection(connection)
+                hidden_neuron.add_outgoing_connection(connection)
             # add BIAS connection
-            output_neuron.add_incomming_neuron([self.bias, initial_weight])
-            self.bias.add_outgoing_neuron(output_neuron)
+            connection = Connection(self.bias, output_neuron, initial_weight)
+            output_neuron.add_incomming_connection(connection)
+            self.bias.add_outgoing_connection(connection)
                 
     def propagate(self, net_input):
         
@@ -58,9 +61,9 @@ class MLP:
             neuron = queue[index]
             neuron.compute_induced_local_field()
             neuron.activate()
-            for outgoing in neuron.outgoing_neurons:
-                if(not queue.__contains__(outgoing)):
-                    queue.append(outgoing)
+            for connection in neuron.outgoing_connections:
+                if(not queue.__contains__(connection.target_neuron)):
+                    queue.append(connection.target_neuron)
             index += 1
           
         # get output
@@ -69,25 +72,59 @@ class MLP:
             result.append(output.last_output)
         return result
         
-    def backpropagate(self, desired):
+    def backpropagate(self, net_input, desired, learning_rate):
+        self.propagate(net_input)        
         
+        # compute delta for output neurons
+        for i in range(len(desired)):
+            neuron = self.output_neurons[i]
+            error = neuron.last_output - desired[i]
+            neuron.last_delta = neuron.derive(neuron.last_induced_local_field) * error
             
+        queue = []
+        for output in self.output_neurons:
+            for incomming in output.incomming_connections:
+                queue.append(incomming.start_neuron)
+        
+        index = 0
+        while(index < len(queue)):
+            neuron = queue[index]
+            #compute outgoing weight change and delta
+            error_sum = 0            
+            for outgoing in neuron.outgoing_connections:
+                error_sum += outgoing.target_neuron.last_delta * outgoing.weight
+                delta_weight = learning_rate*outgoing.target_neuron.last_delta*neuron.last_output
+                print "weight change: ", delta_weight
+                outgoing.set_weight(outgoing.weight + delta_weight)
+                print "new weight: ", outgoing.weight
+            neuron.last_delta = neuron.derive(neuron.last_induced_local_field) * error_sum
+            #add incoming neurons
+            for incomming in neuron.incomming_connections:
+                if(not queue.__contains__(incomming.start_neuron)):
+                    queue.append(incomming.start_neuron)
+            index += 1
 
 class Neuron:
     
     last_induced_local_field = 0
     last_output = 0
     last_delta = 0
-    incomming_neurons = []
-    outgoing_neurons = []
+    incomming_connections = []
+    outgoing_connections = []
+      
     
     def compute_induced_local_field(self):
         induced_local_field = 0
-        for connection in self.incomming_neurons:
-            activation = connection[0].last_output
-            induced_local_field += activation * connection[1]
+        for connection in self.incomming_connections:
+            activation = connection.start_neuron.last_output
+            induced_local_field += activation * connection.weight
         self.last_induced_local_field = induced_local_field
         return self.last_induced_local_field
+        
+    def derive(self, value):
+        f = lambda x : 1 / (1 + np.exp((-1) * x)) 
+        y = f(value)
+        return y * (1 - y)
 
     def activate(self):
         self.last_output = 1 / (1 + np.exp((-1) * self.last_induced_local_field))
@@ -99,11 +136,11 @@ class Neuron:
     def set_last_output(self, output):
         self.last_output = output
         
-    def add_incomming_neuron(self, incomming_neuron):
-        self.incomming_neurons.append(incomming_neuron)
+    def add_incomming_connection(self, incomming_connection):
+        self.incomming_connections.append(incomming_connection)
     
-    def add_outgoing_neuron(self, outgoing_neuron):
-        self.outgoing_neurons.append(outgoing_neuron)
+    def add_outgoing_connection(self, outgoing_connection):
+        self.outgoing_connections.append(outgoing_connection)
         
         
 class InputNeuron(Neuron):
@@ -123,9 +160,29 @@ class BiasNeuron(Neuron):
         return 1
         
 
+class Connection:
+    def __init__(self, start_neuron, target_neuron, weight):
+        self.start_neuron = start_neuron
+        self.target_neuron = target_neuron
+        self.weight = weight
+        
+    def set_weight(self, weight):
+        self.weight = weight
+
 mlp = MLP(2,2,1,0)
 print "input neurons: ", mlp.input_neurons
 print "hidden neurons: ", mlp.hidden_neurons
 print "output neurons: ", mlp.output_neurons
 
 print "Propagate 1,1: ", mlp.propagate((0,0))
+
+for i in range(10):
+    mlp.backpropagate([0,0], [0], 0.5)
+    mlp.backpropagate([0,1], [1], 0.5)
+    mlp.backpropagate([1,0], [1], 0.5)
+    mlp.backpropagate([1,1], [0], 0.5)
+    
+print "propagate after learning: ", mlp.propagate([0,0])
+print "propagate after learning: ", mlp.propagate([1,0])
+print "propagate after learning: ", mlp.propagate([0,1])
+print "propagate after learning: ", mlp.propagate([1,1])
