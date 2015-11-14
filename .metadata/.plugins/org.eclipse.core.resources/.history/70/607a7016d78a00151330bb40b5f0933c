@@ -1,0 +1,5 @@
+public class MLP {
+    public MLP(int number_input, int number_hidden, int number_output, int initial_weight) {
+        // TODO Auto-generated constructor stub
+    }
+}

@@ -1,0 +1,9 @@
+public class BiasNeuron extends Neuron {
+
+    @Override
+    public double activate() {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+}

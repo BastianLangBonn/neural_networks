@@ -1,0 +1,8 @@
+public class Connection {
+
+    public Connection(Neuron inputNeuron, StandardNeuron hiddenNeuron,
+            int initialWeight) {
+        // TODO Auto-generated constructor stub
+    }
+
+}

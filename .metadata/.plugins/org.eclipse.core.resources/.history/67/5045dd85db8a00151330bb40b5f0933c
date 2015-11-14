@@ -1,0 +1,33 @@
+import java.util.List;
+
+public abstract class Neuron {
+
+    private double lastInducedLocalField;
+    private double lastDelta;
+    private double lastOutput;
+    private List<Connection> outgoingConnections;
+
+    public void addOutgoingConnection(Connection connection);
+
+    public void addIncomingConnection(Connection connection);
+
+    public List<Connection> getIncommingConnections();
+
+    public List<Connection> getOutgoingConnections(){
+        return outgoingConnections;
+    }
+
+    public double getLastDelta() {
+        return lastDelta;
+    }
+
+    public double getLastOutput() {
+        return lastOutput;
+    }
+
+    public double getLastInducedLocalField() {
+        return lastInducedLocalField;
+    }
+
+    public abstract double activate();
+}

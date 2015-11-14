@@ -94,15 +94,33 @@ class MLP:
             for outgoing in neuron.outgoing_connections:
                 error_sum += outgoing.target_neuron.last_delta * outgoing.weight
                 delta_weight = learning_rate*outgoing.target_neuron.last_delta*neuron.last_output
-                print "weight change: ", delta_weight
+                #print "weight change: ", delta_weight
                 outgoing.set_weight(outgoing.weight + delta_weight)
-                print "new weight: ", outgoing.weight
+                #print "new weight: ", outgoing.weight
             neuron.last_delta = neuron.derive(neuron.last_induced_local_field) * error_sum
             #add incoming neurons
             for incomming in neuron.incomming_connections:
                 if(not queue.__contains__(incomming.start_neuron)):
                     queue.append(incomming.start_neuron)
             index += 1
+            
+    def __str__(self):
+        result = "Input Layer: "
+        for neuron in self.input_neurons:
+            result += "\nNeuron connections: "
+            for connection in neuron.outgoing_connections:
+                result += "\n" + str(connection.weight)
+        result += "\nHidden Layer: "
+        for neuron in self.hidden_neurons:
+            result += "\nNeuron connections: "
+            for connection in neuron.outgoing_connections:
+                result += "\n" + str(connection.weight)
+        result += "\nOutput Layer: "
+        for neuron in self.output_neurons:
+            result += "\nNeuron connections: "
+            for connection in neuron.outgoing_connections:
+                result += "\n" + str(connection.weight)
+        return result
 
 class Neuron:
     
@@ -142,6 +160,15 @@ class Neuron:
     def add_outgoing_connection(self, outgoing_connection):
         self.outgoing_connections.append(outgoing_connection)
         
+    #def __str__(self):
+     #   result = "Incomming connections: "
+      #  for connection in self.incomming_connections:
+       #     result += str(connection)
+        #result += "\nOutgoing connections: "
+        #for connection in self.outgoing_connections:
+        #    result += str(connection)
+        #return result
+        
         
 class InputNeuron(Neuron):
     
@@ -168,21 +195,9 @@ class Connection:
         
     def set_weight(self, weight):
         self.weight = weight
+        
+    #def __str__(self):
+     #   return "Start: " + str(self.start_neuron) + "Target: " + str(self.target_neuron) + "Weight: " + str(self.weight)
 
-mlp = MLP(2,2,1,0)
-print "input neurons: ", mlp.input_neurons
-print "hidden neurons: ", mlp.hidden_neurons
-print "output neurons: ", mlp.output_neurons
-
-print "Propagate 1,1: ", mlp.propagate((0,0))
-
-for i in range(10):
-    mlp.backpropagate([0,0], [0], 0.5)
-    mlp.backpropagate([0,1], [1], 0.5)
-    mlp.backpropagate([1,0], [1], 0.5)
-    mlp.backpropagate([1,1], [0], 0.5)
-    
-print "propagate after learning: ", mlp.propagate([0,0])
-print "propagate after learning: ", mlp.propagate([1,0])
-print "propagate after learning: ", mlp.propagate([0,1])
-print "propagate after learning: ", mlp.propagate([1,1])
+mlp = MLP(1,1,1,0.5)
+#print mlp.input_neurons[0].incomming_connections

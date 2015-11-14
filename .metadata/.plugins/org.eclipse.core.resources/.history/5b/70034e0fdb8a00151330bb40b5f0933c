@@ -1,0 +1,61 @@
+import java.util.List;
+
+public class InputNeuron implements Neuron {
+
+    @Override
+    public void addOutgoingConnection(Connection connection) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void addIncomingConnection(Connection connection) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("Input Neuron ");
+
+        return result.toString();
+    }
+
+    @Override
+    public List<Connection> getIncommingConnections() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public List<Connection> getOutgoingConnections() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public double getLastDelta() {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public double getLastOutput() {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public double getLastInducedLocalField() {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public double activate() {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+}

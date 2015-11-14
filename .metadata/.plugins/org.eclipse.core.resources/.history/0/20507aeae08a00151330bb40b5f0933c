@@ -1,0 +1,76 @@
+package model;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public abstract class Neuron {
+
+    private double lastInducedLocalField;
+    private double lastDelta;
+    private double lastOutput;
+    private final List<Connection> outgoingConnections;
+    private final List<Connection> incomingConnections;
+
+    public Neuron() {
+        outgoingConnections = new LinkedList<Connection>();
+        incomingConnections = new LinkedList<Connection>();
+    }
+
+    public void addOutgoingConnection(Connection connection) {
+        outgoingConnections.add(connection);
+    }
+
+    public void addIncomingConnection(Connection connection) {
+        incomingConnections.add(connection);
+    }
+
+    public List<Connection> getIncommingConnections() {
+        return incomingConnections;
+    }
+
+    public List<Connection> getOutgoingConnections() {
+        return outgoingConnections;
+    }
+
+    public double getLastDelta() {
+        return lastDelta;
+    }
+
+    public double getLastOutput() {
+        return lastOutput;
+    }
+
+    public double getLastInducedLocalField() {
+        return lastInducedLocalField;
+    }
+
+    public abstract double activate();
+
+    public double computeInducedLocalField() {
+        double result = 0;
+        for (Connection connection : incomingConnections) {
+            result += connection.getWeight() * connection.getOriginNeuron().getLastOutput();
+        }
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append(String.format("Number of incomming connections: %d. ", getIncommingConnections().size()));
+        result.append(String.format("Number of outgoing connections: %d. ", getOutgoingConnections().size()));
+        return result.toString();
+    }
+
+    public void setLastInducedLocalField(Double inducedLocalField) {
+        lastInducedLocalField = inducedLocalField;
+    }
+
+    public void setLastOutput(double lastOutput) {
+        this.lastOutput = lastOutput;
+    }
+
+    public void setLastDelta(double lastDelta) {
+        this.lastDelta = lastDelta;
+    }
+}

@@ -1,0 +1,12 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class MLP {
+
+    private final List<Neuron> inputLayer = new ArrayList<Neuron>();
+
+    public MLP(int numberInput, int numberHidden, int numberOutput,
+            int initialWeight) {
+
+    }
+}

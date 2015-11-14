@@ -1,0 +1,16 @@
+
+public class BiasNeuron implements Neuron {
+
+    @Override
+    public void addOutgoingConnection(Connection connection) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void addIncomingConnection(Connection connection) {
+        // TODO Auto-generated method stub
+
+    }
+
+}

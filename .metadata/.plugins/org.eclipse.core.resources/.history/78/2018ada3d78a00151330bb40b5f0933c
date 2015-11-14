@@ -1,0 +1,9 @@
+public class MLP {
+    
+    private List<Neuron> inputLayer = new ArrayList<Neuron>();
+    
+    public MLP(int numberInput, int numberHidden, int numberOutput,
+            int initialWeight) {
+        
+    }
+}

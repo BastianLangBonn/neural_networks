@@ -1,0 +1,48 @@
+import java.util.List;
+
+public abstract class Neuron {
+
+    private double lastInducedLocalField;
+    private double lastDelta;
+    private double lastOutput;
+    private List<Connection> outgoingConnections;
+    private List<Connection> incomingConnections;
+
+    public void addOutgoingConnection(Connection connection) {
+        outgoingConnections.add(connection);
+    }
+
+    public void addIncomingConnection(Connection connection) {
+        incomingConnections.add(connection);
+    }
+
+    public List<Connection> getIncommingConnections() {
+        return incomingConnections;
+    }
+
+    public List<Connection> getOutgoingConnections() {
+        return outgoingConnections;
+    }
+
+    public double getLastDelta() {
+        return lastDelta;
+    }
+
+    public double getLastOutput() {
+        return lastOutput;
+    }
+
+    public double getLastInducedLocalField() {
+        return lastInducedLocalField;
+    }
+
+    public abstract double activate();
+
+    public double computeInducedLocalField() {
+        double result = 0;
+        for (Connection connection : incomingConnections) {
+            result += connection.getWeight() * connection.getOriginNeuron().getLastOutput();
+        }
+        return result;
+    }
+}

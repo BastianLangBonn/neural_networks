@@ -1,0 +1,46 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class MLP {
+
+    private final List<Neuron> inputLayer = new ArrayList<Neuron>();
+    private final List<Neuron> hiddenLayer = new ArrayList<Neuron>();
+    private final List<Neuron> outputLayer = new ArrayList<Neuron>();
+    private final Neuron bias = new BiasNeuron();
+
+    public MLP(int numberInput, int numberHiddenNeurons, int numberOutput, int initialWeight) {
+        for (int i = 0; i < numberInput; i++) {
+            Neuron inputNeuron = new InputNeuron();
+            inputLayer.add(inputNeuron);
+        }
+
+        createFullyConnectedLayer(inputLayer, hiddenLayer, numberHiddenNeurons, initialWeight);
+        createFullyConnectedLayer(hiddenLayer, outputLayer, numberOutput, initialWeight);
+
+        for (int i = 0; i < numberOutput; i++) {
+            Neuron outputNeuron = new StandardNeuron();
+            for (Neuron hiddenNeuron : hiddenLayer) {
+                Connection connection = new Connection(outputNeuron, hiddenNeuron, initialWeight);
+                hiddenNeuron.addOutgoingConnection(connection);
+                outputNeuron.addIncomingConnection(connection);
+            }
+            new Connection(bias, outputNeuron, initialWeight);
+            outputLayer.add(outputNeuron);
+        }
+    }
+
+    private void createFullyConnectedLayer(List<Neuron> originLayer, List<Neuron> targetLayer, int layerSize,
+            int initialWeight) {
+        for (int i = 0; i < layerSize; i++) {
+            Neuron targetNeuron = new StandardNeuron();
+            for (Neuron originNeuron : originLayer) {
+                Connection connection = new Connection(originNeuron, targetNeuron, initialWeight);
+                originNeuron.addOutgoingConnection(connection);
+                targetNeuron.addIncomingConnection(connection);
+            }
+            Connection connection = new Connection(bias, targetNeuron, initialWeight);
+            targetNeuron.addIncomingConnection(connection);
+            targetLayer.add(targetNeuron);
+        }
+    }
+}

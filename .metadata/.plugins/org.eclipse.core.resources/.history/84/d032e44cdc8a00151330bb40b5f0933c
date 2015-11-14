@@ -1,0 +1,36 @@
+public class Connection {
+
+    private Neuron originNeuron;
+    private Neuron targetNeuron;
+    private double weight;
+    
+    public Connection(Neuron startNeuron, Neuron targetNeuron, int initialWeight) {
+        // TODO Auto-generated constructor stub
+    }
+
+    public Neuron getOriginNeuron() {
+        return null;
+    }
+
+    public double getWeight() {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    public void setOriginNeuron(Neuron originNeuron) {
+        this.originNeuron = originNeuron;
+    }
+
+    public Neuron getTargetNeuron() {
+        return targetNeuron;
+    }
+
+    public void setTargetNeuron(Neuron targetNeuron) {
+        this.targetNeuron = targetNeuron;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+}

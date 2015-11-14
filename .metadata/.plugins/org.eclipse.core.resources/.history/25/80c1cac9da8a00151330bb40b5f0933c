@@ -1,0 +1,12 @@
+import java.util.List;
+
+public interface Neuron {
+
+    public void addOutgoingConnection(Connection connection);
+
+    public void addIncomingConnection(Connection connection);
+
+    public List<Connection> getIncommingConnections();
+
+    public List<Connection> getOutgoingConnections();
+}

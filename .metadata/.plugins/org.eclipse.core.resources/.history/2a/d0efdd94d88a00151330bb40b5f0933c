@@ -1,0 +1,8 @@
+public class StandardNeuron implements Neuron {
+
+    public void addIncomingConnection(Connection connection) {
+        // TODO Auto-generated method stub
+        
+    }
+
+}

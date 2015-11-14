@@ -1,0 +1,15 @@
+public class StandardNeuron implements Neuron {
+
+    @Override
+    public void addIncomingConnection(Connection connection) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void addOutgoingConnection(Connection connection) {
+        // TODO Auto-generated method stub
+
+    }
+
+}

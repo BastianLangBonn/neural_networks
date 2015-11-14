@@ -1,0 +1,6 @@
+public interface Neuron {
+
+    public void addOutgoingConnection(Connection connection);
+
+    public void addIncomingConnection(Connection connection);
+}
