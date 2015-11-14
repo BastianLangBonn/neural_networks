@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.4.18)  14 NOV 2015 18:32
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.4.18)  14 NOV 2015 19:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -631,27 +631,167 @@ Overfull \hbox (4.6327pt too wide) in paragraph at lines 136--137
 only af-ter an epoch 
  []
 
-[3] (./NN_BastianLang_221102.aux) ) 
+[3] [4]
+Overfull \hbox (38.49454pt too wide) in paragraph at lines 229--230
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (50.05783pt too wide) in paragraph at lines 231--232
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (38.49454pt too wide) in paragraph at lines 235--236
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[5]
+Overfull \hbox (229.28888pt too wide) in paragraph at lines 292--294
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (131.00089pt too wide) in paragraph at lines 295--296
+[][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (136.78253pt too wide) in paragraph at lines 296--298
+[][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (211.94394pt too wide) in paragraph at lines 307--308
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (148.34583pt too wide) in paragraph at lines 312--313
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[6]
+Overfull \hbox (78.96606pt too wide) in paragraph at lines 316--317
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (159.90912pt too wide) in paragraph at lines 346--347
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (26.93124pt too wide) in paragraph at lines 356--357
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[7]
+Overfull \hbox (61.62112pt too wide) in paragraph at lines 359--360
+[][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (252.41547pt too wide) in paragraph at lines 360--361
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (73.18442pt too wide) in paragraph at lines 367--368
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (38.49454pt too wide) in paragraph at lines 368--369
+[][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (15.36795pt too wide) in paragraph at lines 370--371
+[][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (90.52936pt too wide) in paragraph at lines 371--372
+[][][][][][][][][][][][][][][][] 
+ []
+
+[8]
+Overfull \hbox (113.65594pt too wide) in paragraph at lines 444--445
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[9]
+Overfull \hbox (223.50723pt too wide) in paragraph at lines 453--454
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (217.72559pt too wide) in paragraph at lines 459--460
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[10]
+Overfull \hbox (50.05783pt too wide) in paragraph at lines 497--498
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (67.40277pt too wide) in paragraph at lines 513--514
+[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[11]
+Overfull \hbox (3.80466pt too wide) in paragraph at lines 556--557
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (84.74771pt too wide) in paragraph at lines 569--570
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[12]
+Overfull \hbox (50.05783pt too wide) in paragraph at lines 618--619
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (50.05783pt too wide) in paragraph at lines 619--620
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (50.05783pt too wide) in paragraph at lines 620--621
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (50.05783pt too wide) in paragraph at lines 621--622
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[13] [14] (./NN_BastianLang_221102.aux) ) 
 Here is how much of TeX's memory you used:
- 6381 strings out of 494935
- 92735 string characters out of 6178122
- 194652 words of memory out of 5000000
- 9467 multiletter control sequences out of 15000+600000
- 81741 words of font info for 99 fonts, out of 8000000 for 9000
+ 6393 strings out of 494935
+ 92856 string characters out of 6178122
+ 220652 words of memory out of 5000000
+ 9473 multiletter control sequences out of 15000+600000
+ 94857 words of font info for 107 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 47i,10n,47p,259b,376s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvi
-ps/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/fourier/fourie
-r-mex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fourier/fourier-ml.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fourier/fourier-mlit.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on NN_BastianLang_221102.pdf (3 pages, 47279 bytes).
+ 47i,11n,47p,407b,1486s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/e
+nc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/fourier/
+fourier-mex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fourier/fouri
+er-ml.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fourier/fourier-mli
+t.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/adobe/utopia/putri8a.pfb>
+Output written on NN_BastianLang_221102.pdf (14 pages, 69638 bytes).
 PDF statistics:
- 43 PDF objects out of 1000 (max. 8388607)
- 30 compressed objects within 1 object stream
+ 79 PDF objects out of 1000 (max. 8388607)
+ 55 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
