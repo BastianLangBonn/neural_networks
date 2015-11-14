@@ -1,0 +1,190 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Short Sectioned Assignment
+% LaTeX Template
+% Version 1.0 (5/5/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+
+\usepackage{graphicx}
+
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+\usepackage[procnames]{listings}
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\textsc{BRSU} \\ [25pt] % Your university, school and/or department name(s)
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge Neural Networks\\Assignment 5 \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{Bastian Lang} % Your name
+
+\date{\normalsize\today} % Today's date or a custom date
+
+\begin{document}
+
+\maketitle % Print the title
+
+\newpage
+
+This report contains the summary, ex3.1 and ex3.2 without any programming/plotting.
+
+\section{Outline}
+
+\begin{itemize}
+	\item Introduction
+	\begin{itemize}
+		\item Three distinct characteristics of MLP:
+		\begin{itemize}
+			\item Model of each neuron includes nonlinear activation function that is differentiable everywhere
+			\item One or more layers of hidden units
+			\item High degree of connectivity
+		\end{itemize}
+		\item Organization of the chapter
+	\end{itemize}
+	
+	
+	\item Some Preliminaries
+	\begin{itemize}
+		\item Signals in an MLP:
+		\begin{itemize}
+			\item Function Signals: Propagating forward through the network
+			\item Error Signals: Propagating backwards through the network
+		\end{itemize}
+		\item Computations for each neuron:
+		\begin{itemize}
+			\item Function signal
+			\item Gradient vector of error surface
+		\end{itemize}
+		\item Notation
+	\end{itemize}
+	
+	
+	\item Back-Propagation Algorithm
+	\begin{itemize}
+		\item Error signal at output neuron: $e_j(n) = d_j(n) - y_j(n)$
+		\item Instantaneous value of total error energy: $\xi (n) = 0.5\sum_{j\epsilon C} e_j^2(n)$
+		\item Induced Local Field $v_j(n) = \sum_{i=0}^{m}w_{ji}(n)y_i(n)$
+		\item Function signal $y_i(n) = \phi _j(v_j(n))$
+		\item Derivation of delta rule
+		\item Local gradient for output neuron: $\delta _j(n) = e_j(n)\phi _j^\prime(v_j(n))$
+		\item Local gradient for hidden neuron: $\delta _j(n) = \phi _j^\prime (v_j(n))\sum_{k}\delta_k(n)w_{kj}(n)$
+		\item Weight correction: $\Delta w_{ji}(n) = \eta * \delta _j(n) * y_i(n)$
+		\item Two passes of Computation
+		\begin{itemize}
+			\item Forward pass: Compute net output
+			\item Backward pass: Adjust weights according to error
+		\end{itemize}
+		\item Activation Function
+		\begin{itemize}
+			\item Logistic Function
+			\item Hyperbolic tangent function
+		\end{itemize}
+		\item Rate of Learning
+		\begin{itemize}
+			\item Including momentum term for stability
+		\end{itemize}
+		\item Sequential and Batch Modes of Training
+		\begin{itemize}
+			\item Epoch: Complete presentation of training set
+			\item Sequential Mode of back-propagation learning: Update weights directly
+			\item Batch Mode of back-propagation learning: Update weights only after an epoch
+		\end{itemize}
+		\item Summary of the Back-Propagation Algorithm
+		\begin{itemize}
+			\item Cycle for sequential updating:
+			\begin{itemize}
+				\item Initialization
+				\item Presentations of Training Examples
+				\item Forward Computation
+				\item Backward Computation
+				\item Iteration
+			\end{itemize}
+		\end{itemize}
+	\end{itemize}
+	
+	\item Summary of the back-propagation algorithm
+	
+	
+	\item XOR problem
+	\begin{itemize}
+		\item Special case of classifying points in the unit hypercube
+		\item Elemental perceptron cannot solve XOR
+		\item Example model using McCulloch-Pits neurons
+	\end{itemize}
+	
+	
+	\item Heuristics for making the back-propagation algorithm perform better
+	\begin{itemize}
+		\item Methods to improve back-prop
+		\begin{itemize}
+			\item Sequential versus batch update
+			\item Maximizing information content
+			\begin{itemize}
+				\item Use of example that results in largest training error
+				\item Use of example that is radically different than previous ones
+			\end{itemize}
+			\item Activation Function
+			\begin{itemize}
+				\item Better antisymmetric than non-symmetric
+			\end{itemize}
+			\item Target values
+			\begin{itemize}
+				\item Offset of target values to lie within function range
+			\end{itemize}
+			\item Normalizing the inputs
+			\item Initialization
+			\item Learning from hints
+			\item Learning rates
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+
+
+\end{document}
