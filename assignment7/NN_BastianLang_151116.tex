@@ -74,6 +74,95 @@
 
 \section{Outline}
 
+\begin{itemize}
+	\item Output Representation and Decision Rule
+	
+	\item Computer Experiment
+	\begin{itemize}
+		\item Bayesian Decision Boundary
+		\item Experimental Determination of Optimal Multilayer Perceptron
+		\begin{itemize}
+			\item Optimal Number of Hidden Neurons
+			\item Optimal Learning and Momentum Constants
+			\item Evaluation of Optimal Network Design
+		\end{itemize}
+	\end{itemize}
+	
+	\item Feature Detection
+	\begin{itemize}
+		\item Relation to Fisher's Linear Discriminent
+	\end{itemize}
+	
+	\item Back-Propagation and Differentation
+	\begin{itemize}
+		\item Jacobian Matrix
+	\end{itemize}
+	
+	\item Hessian Matrix
+	
+	\item Generalization
+	\begin{itemize}
+		\item Sufficient Training Set Size for a Valid Generalization
+	\end{itemize}
+	
+	\item Approximation of Functions
+	\begin{itemize}
+		\item Universal Approximation Theorem
+		\item Bounds on Approximation Errors
+		\item Curse of Dimensionality
+		\item Practical Considerations
+	\end{itemize}
+	
+	\item Cross-Validation
+	\begin{itemize}
+		\item Model Selection
+		\item Early Stopping Method of Training
+		\item Variants of Cross-Validation
+	\end{itemize}
+	
+	\item Network Pruning Techniques
+	\begin{itemize}
+		\item Complexity-Regularization
+		\item Weight Decay
+		\item Weight Elimination
+		\item Approximate Smoother
+		\item Hessian-based Network Pruning
+		\item Computing the inverse Hessian matrix
+	\end{itemize}
+	
+	\item Virtues and Limitations of Back-Propagation Learning
+	\begin{itemize}
+		\item Connectionism
+		\item Feature Detection
+		\item Function Approximation
+		\item Computational Efficiency
+		\item Sensitivity Analysis
+		\item Robustness
+		\item Convergence
+		\item Local Minima
+		\item Scaling
+	\end{itemize}
+	
+	\item Accelerated Convergence of Back-Propagation Learning
+	\begin{itemize}
+		\item 4 Heuristics
+	\end{itemize}
+	
+	\item Supervised Learning viewed as an Optimization Problem
+	\begin{itemize}
+		\item Conjugate-Gradient Method
+		\item Example
+		\item Summary of the Nonlinear Conjugate Gradient Algorithm
+		\item Quasi-Newton Methods
+		\item Comparison of Quasi-Newton Methods with Conjugate-Gradient Methods
+	\end{itemize}
+	
+	\item Convolutional Networks
+	
+	
+	\item Summary and Discussion
+\end{itemize}
+
 \section{PCA \& ICA}
 
 \subsection{output}
@@ -81,6 +170,13 @@
 	\centering
   \includegraphics[width=0.8\textwidth]{combined.png}
 	\caption{Both datasets in new coordinate system after performing PCA.}
+	\label{fig1}
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.8\textwidth]{combined_ica.png}
+	\caption{Both datasets in new coordinate system after performing ICA.}
 	\label{fig1}
 \end{figure}
 
@@ -96,6 +192,48 @@ Created on Sat Nov 21 12:41:57 2015
 from matplotlib.mlab import PCA as mlabPCA
 import matplotlib.pyplot as plt
 import numpy as np
+from sklearn.decomposition import FastICA as ICA
+from sklearn.cluster import KMeans
+import neurolab as nl
+
+
+def cluster_data(data,class_label):
+    
+    result = KMeans(n_clusters=2, random_state=170).fit_predict(data)
+    
+
+    plt.scatter(data[:,0],data[:,1], c=result)
+
+    plt.xlabel('x_values')
+    plt.ylabel('y_values')
+    plt.xlim([-4,4])
+    plt.ylim([-4,4])
+    plt.legend()
+    plt.title('Transformed samples versus original data')
+    
+    plt.show()
+
+
+def do_ica(data, class_label):
+    
+    # ica
+    ica = ICA()
+    result = ica.fit(data).transform(data)
+    
+    
+
+    plt.plot(result[:,0],result[:,1],
+             'o', markersize=7, color='blue', alpha=0.5, label=class_label)
+
+    plt.xlabel('x_values')
+    plt.ylabel('y_values')
+    plt.xlim([-0.5,0.5])
+    plt.ylim([-0.5,0.5])
+    plt.legend()
+    plt.title('Transformed samples versus original data')
+    
+    plt.show()
+    
 
 def do_pca(data, class_label):
     
@@ -118,14 +256,8 @@ def do_pca(data, class_label):
     plt.title('Transformed samples versus original data')
     
     plt.show()
-
-
-
-wall13_data = np.genfromtxt('wall13.csv', delimiter=',')
-do_pca(wall13_data, 'wall13')
-
-wall73_data = np.genfromtxt('wall73.csv', delimiter=',')
-do_pca(wall73_data, 'wall73') 
+    
+    return mlab_pca.Y
 
 
 
@@ -145,13 +277,48 @@ def split_pca(combined_data, label_1, label_2):
     plt.xlim([-4,4])
     plt.ylim([-4,4])
     plt.legend()
-    plt.title('Transformed samples with class labels from matplotlib.mlab.PCA()')
+    #plt.title('Transformed samples with class labels from matplotlib.mlab.PCA()')
     
     plt.show()
     
+    return mlab_pca.Y
+   
+
+def split_ica(combined_data, label_1, label_2):
+    
+    ica = ICA()
+    result = ica.fit(combined_data).transform(combined_data)
+    
+    
+    plt.plot(result[0:100,0],result[0:100,1],
+             'o', markersize=7, color='blue', alpha=0.5, label=label_1)
+    plt.plot(result[100:200,0], result[100:200,1],
+             '^', markersize=7, color='red', alpha=0.5, label=label_2)
+    
+    plt.xlabel('x_values')
+    plt.ylabel('y_values')
+    plt.xlim([-0.3,0.3])
+    plt.ylim([-0.3,0.3])
+    plt.legend()
+    #plt.title('Transformed samples with class labels from matplotlib.mlab.PCA()')
+    
+    plt.show()
+    
+    return result
+
+wall13_data = np.genfromtxt('wall13.csv', delimiter=',')
+do_pca(wall13_data, 'wall13')
+#o_ica(wall13_data, 'wall13')   
+
+
+wall73_data = np.genfromtxt('wall73.csv', delimiter=',')
+do_pca(wall73_data, 'wall73')
+do_ica(wall73_data, 'wall73')    
 
 mixed_data = np.concatenate((wall13_data, wall73_data), axis=0)
-split_pca(mixed_data, 'wall13', 'wall73')
+Y = split_pca(mixed_data, 'wall13', 'wall73')
+split_ica(mixed_data, 'wall13', 'wall73')
+#cluster_data(Y, 'mixed')
 \end{lstlisting}
 
 

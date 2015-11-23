@@ -8,6 +8,48 @@ Created on Sat Nov 21 12:41:57 2015
 from matplotlib.mlab import PCA as mlabPCA
 import matplotlib.pyplot as plt
 import numpy as np
+from sklearn.decomposition import FastICA as ICA
+from sklearn.cluster import KMeans
+import neurolab as nl
+
+
+def cluster_data(data,class_label):
+    
+    result = KMeans(n_clusters=2, random_state=170).fit_predict(data)
+    
+
+    plt.scatter(data[:,0],data[:,1], c=result)
+
+    plt.xlabel('x_values')
+    plt.ylabel('y_values')
+    plt.xlim([-4,4])
+    plt.ylim([-4,4])
+    plt.legend()
+    plt.title('Transformed samples versus original data')
+    
+    plt.show()
+
+
+def do_ica(data, class_label):
+    
+    # ica
+    ica = ICA()
+    result = ica.fit(data).transform(data)
+    
+    
+
+    plt.plot(result[:,0],result[:,1],
+             'o', markersize=7, color='blue', alpha=0.5, label=class_label)
+
+    plt.xlabel('x_values')
+    plt.ylabel('y_values')
+    plt.xlim([-0.5,0.5])
+    plt.ylim([-0.5,0.5])
+    plt.legend()
+    plt.title('Transformed samples versus original data')
+    
+    plt.show()
+    
 
 def do_pca(data, class_label):
     
@@ -30,14 +72,8 @@ def do_pca(data, class_label):
     plt.title('Transformed samples versus original data')
     
     plt.show()
-
-
-
-wall13_data = np.genfromtxt('wall13.csv', delimiter=',')
-do_pca(wall13_data, 'wall13')
-
-wall73_data = np.genfromtxt('wall73.csv', delimiter=',')
-do_pca(wall73_data, 'wall73') 
+    
+    return mlab_pca.Y
 
 
 
@@ -61,6 +97,41 @@ def split_pca(combined_data, label_1, label_2):
     
     plt.show()
     
+    return mlab_pca.Y
+   
+
+def split_ica(combined_data, label_1, label_2):
+    
+    ica = ICA()
+    result = ica.fit(combined_data).transform(combined_data)
+    
+    
+    plt.plot(result[0:100,0],result[0:100,1],
+             'o', markersize=7, color='blue', alpha=0.5, label=label_1)
+    plt.plot(result[100:200,0], result[100:200,1],
+             '^', markersize=7, color='red', alpha=0.5, label=label_2)
+    
+    plt.xlabel('x_values')
+    plt.ylabel('y_values')
+    plt.xlim([-0.3,0.3])
+    plt.ylim([-0.3,0.3])
+    plt.legend()
+    #plt.title('Transformed samples with class labels from matplotlib.mlab.PCA()')
+    
+    plt.show()
+    
+    return result
+
+wall13_data = np.genfromtxt('wall13.csv', delimiter=',')
+do_pca(wall13_data, 'wall13')
+#o_ica(wall13_data, 'wall13')   
+
+
+wall73_data = np.genfromtxt('wall73.csv', delimiter=',')
+do_pca(wall73_data, 'wall73')
+do_ica(wall73_data, 'wall73')    
 
 mixed_data = np.concatenate((wall13_data, wall73_data), axis=0)
-split_pca(mixed_data, 'wall13', 'wall73')
+Y = split_pca(mixed_data, 'wall13', 'wall73')
+split_ica(mixed_data, 'wall13', 'wall73')
+#cluster_data(Y, 'mixed')
