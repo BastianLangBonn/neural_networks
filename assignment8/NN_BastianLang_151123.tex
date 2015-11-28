@@ -1,3 +1,222 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Short Sectioned Assignment
+% LaTeX Template
+% Version 1.0 (5/5/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+
+\usepackage{graphicx}
+
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+\usepackage[procnames]{listings}
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\textsc{BRSU} \\ [25pt] % Your university, school and/or department name(s)
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge Neural Networks\\Assignment 8 \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{Bastian Lang} % Your name
+
+\date{\normalsize\today} % Today's date or a custom date
+
+\begin{document}
+
+\maketitle % Print the title
+
+\newpage
+
+
+
+\section{Exercise 5.10}
+
+\subsection{Note}
+This exercise does not make much sense if the other parameters are not given. If I would have chosen a very big radius, then the vertical separation would not have had any impact at all...
+
+\subsection{output}
+Figure \ref{figv1} till \ref{figvn6} show clustered data with variation of vertical separation.\\
+One can observe that the clusters "mix", i.e. parts of the lower figure become part of clusters of the upper figure and vice versa.\\
+
+This also effects the mean and the variance, but mostly in y-direction. The other figures show all means for the different clusters. I had to drop the variance figures because of technical problems and no time left while building the pdf...
+
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.8\textwidth]{v1.png}
+	\caption{Clustered samples from figure with vertical separation of 1}
+	\label{figv1}
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.8\textwidth]{v0.png}
+	\caption{Clustered samples from figure with vertical separation of 0}
+	\label{figv0}
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.8\textwidth]{vn1.png}
+	\caption{Clustered samples from figure with vertical separation of -1}
+	\label{figvn1}
+\end{figure}
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.8\textwidth]{vn2.png}
+	\caption{Clustered samples from figure with vertical separation of -2}
+	\label{figvn2}
+\end{figure}
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.8\textwidth]{vn3.png}
+	\caption{Clustered samples from figure with vertical separation of -3}
+	\label{figvn3}
+\end{figure}
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.8\textwidth]{vn4.png}
+	\caption{Clustered samples from figure with vertical separation of -4}
+	\label{figvn4}
+\end{figure}
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.8\textwidth]{vn5.png}
+	\caption{Clustered samples from figure with vertical separation of -5}
+	\label{figvn5}
+\end{figure}
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.8\textwidth]{vn6.png}
+	\caption{Clustered samples from figure with vertical separation of -6}
+	\label{figvn6}
+\end{figure}
+
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.8\textwidth]{mean_c1.png}
+	\caption{Means of cluster 1}
+	\label{figvn6}
+\end{figure}
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.8\textwidth]{mean_c2.png}
+	\caption{Means of cluster 2}
+	\label{figvn6}
+\end{figure}
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.8\textwidth]{mean_c3.png}
+	\caption{Means of cluster 3}
+	\label{figvn6}
+\end{figure}
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.8\textwidth]{mean_c4.png}
+	\caption{Means of cluster 4}
+	\label{figvn6}
+\end{figure}
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.8\textwidth]{mean_c5.png}
+	\caption{Means of cluster 5}
+	\label{figvn6}
+\end{figure}
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.8\textwidth]{mean_c6.png}
+	\caption{Means of cluster 6}
+	\label{figvn6}
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.8\textwidth]{variance_c1.png}
+	\caption{Variances of cluster 1}
+	\label{figv1}
+\end{figure}
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.8\textwidth]{variance_c2.png}
+	\caption{Variances of cluster 2}
+	\label{figv2}
+\end{figure}
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.8\textwidth]{variance_c3.png}
+	\caption{Variances of cluster 3}
+	\label{figv3}
+\end{figure}
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.8\textwidth]{variance_c4.png}
+	\caption{Variances of cluster 4}
+	\label{figv4}
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.8\textwidth]{variance_c5.png}
+	\caption{Variances of cluster 5}
+	\label{figv5}
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.8\textwidth]{variance_c6.png}
+	\caption{Variances of cluster 6}
+	\label{figv6}
+\end{figure}
+
+
+\subsection{code}
+\begin{lstlisting}
 # -*- coding: utf-8 -*-
 """
 Created on Sat Nov 28 14:24:39 2015
@@ -301,3 +520,9 @@ for i in range(6):
         ax1.scatter(variance[i][0], variance[i][1], c= float(i) / 6.0 )
     
 
+
+\end{lstlisting}
+
+
+
+\end{document}
