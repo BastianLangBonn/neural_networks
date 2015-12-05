@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.3.18)  2 DEC 2015 11:36
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.3.18)  5 DEC 2015 15:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -454,70 +454,78 @@ Class scrartcl Warning: Usage of package `fancyhdr' together
 \f@ncyO@olf=\skip61
 \f@ncyO@orf=\skip62
 )
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count110
+\float@exts=\toks27
+\float@box=\box31
+\@float@everytoks=\toks28
+\@floatcapt=\box32
+)
 (./NN_BastianLang_151130.aux)
 \openout1 = `NN_BastianLang_151130.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 69.
-LaTeX Font Info:    Try loading font information for FML+futm on input line 69.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 70.
+LaTeX Font Info:    Try loading font information for FML+futm on input line 70.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/fmlfutm.fd
 File: fmlfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futm.
 )
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 69.
-LaTeX Font Info:    Try loading font information for FMS+futm on input line 69.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 70.
+LaTeX Font Info:    Try loading font information for FMS+futm on input line 70.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/fmsfutm.fd
 File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
 )
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 69.
-LaTeX Font Info:    Try loading font information for FMX+futm on input line 69.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 70.
+LaTeX Font Info:    Try loading font information for FMX+futm on input line 70.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/fmxfutm.fd
 File: fmxfutm.fd futm-extension
 )
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 69.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 69.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 70.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 70.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Try loading font information for T1+futs on input line 69.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Try loading font information for T1+futs on input line 70.
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/t1futs.fd
 File: t1futs.fd 2004/03/02 Fontinst v1.926 font definitions for T1/futs.
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count110
+\scratchcounter=\count111
 \scratchdimen=\dimen119
-\scratchbox=\box31
-\nofMPsegments=\count111
-\nofMParguments=\count112
-\everyMPshowfont=\toks27
-\MPscratchCnt=\count113
+\scratchbox=\box33
+\nofMPsegments=\count112
+\nofMParguments=\count113
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count114
 \MPscratchDim=\dimen120
-\MPnumerator=\count114
-\makeMPintoPDFobject=\count115
-\everyMPtoPDFconversion=\toks28
+\MPnumerator=\count115
+\makeMPintoPDFobject=\count116
+\everyMPtoPDFconversion=\toks30
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -566,36 +574,36 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count116
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 72.
+\c@lstlisting=\count117
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 73.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Try loading font information for FML+futmi on input line 72
+LaTeX Font Info:    Try loading font information for FML+futmi on input line 73
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/fmlfutmi.fd
 File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
 )
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 13.24796pt on input line 72.
+(Font)              scaled to size 13.24796pt on input line 73.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 72.
+(Font)              scaled to size 9.19998pt on input line 73.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 72.
+(Font)              scaled to size 7.35999pt on input line 73.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 13.24796pt on input line 72.
+(Font)              scaled to size 13.24796pt on input line 73.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 72.
+(Font)              scaled to size 9.19998pt on input line 73.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 72.
-LaTeX Font Info:    Try loading font information for U+msa on input line 72.
+(Font)              scaled to size 7.35999pt on input line 73.
+LaTeX Font Info:    Try loading font information for U+msa on input line 73.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 72.
+LaTeX Font Info:    Try loading font information for U+msb on input line 73.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -608,29 +616,174 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <exercise2.png, id=7, 659.46375pt x 203.76125pt>
 File: exercise2.png Graphic file (type png)
  <use exercise2.png>
-Package pdftex.def Info: exercise2.png used on input line 87.
+Package pdftex.def Info: exercise2.png used on input line 88.
 (pdftex.def)             Requested size: 334.60571pt x 103.38829pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 96--100
+Underfull \hbox (badness 10000) in paragraph at lines 97--101
 
  []
 
-[2 <./exercise2.png>] (./NN_BastianLang_151130.aux) ) 
+[2 <./exercise2.png>] <samples_1.png, id=11, 379.4175pt x 256.96pt>
+File: samples_1.png Graphic file (type png)
+
+<use samples_1.png>
+Package pdftex.def Info: samples_1.png used on input line 116.
+(pdftex.def)             Requested size: 334.60571pt x 226.6156pt.
+ <samples_2.png, id=13, 379.4175pt x 256.96pt>
+File: samples_2.png Graphic file (type png)
+
+<use samples_2.png>
+Package pdftex.def Info: samples_2.png used on input line 122.
+(pdftex.def)             Requested size: 334.60571pt x 226.6156pt.
+ <samples_3.png, id=14, 379.4175pt x 256.96pt>
+File: samples_3.png Graphic file (type png)
+
+<use samples_3.png>
+Package pdftex.def Info: samples_3.png used on input line 128.
+(pdftex.def)             Requested size: 334.60571pt x 226.6156pt.
+ [3 <./samples_1.png>]
+<samples_4.png, id=19, 372.39125pt x 256.96pt>
+File: samples_4.png Graphic file (type png)
+ <use samples_4.png>
+Package pdftex.def Info: samples_4.png used on input line 134.
+(pdftex.def)             Requested size: 334.60571pt x 230.8933pt.
+ [4 <./samples_2.png> <./samples_3.png>] <linear_1.png, id=25, 379.4175pt x 266
+.9975pt>
+File: linear_1.png Graphic file (type png)
+
+<use linear_1.png>
+Package pdftex.def Info: linear_1.png used on input line 142.
+(pdftex.def)             Requested size: 334.60571pt x 235.46776pt.
+ <linear_2.png, id=26, 379.4175pt x 266.9975pt>
+File: linear_2.png Graphic file (type png)
+
+<use linear_2.png>
+Package pdftex.def Info: linear_2.png used on input line 148.
+(pdftex.def)             Requested size: 334.60571pt x 235.46776pt.
+ <linear_3.png, id=27, 379.4175pt x 266.9975pt>
+File: linear_3.png Graphic file (type png)
+
+<use linear_3.png>
+Package pdftex.def Info: linear_3.png used on input line 154.
+(pdftex.def)             Requested size: 334.60571pt x 235.46776pt.
+ [5 <./samples_4.png> <./linear_1.png>]
+<linear_4.png, id=33, 372.39125pt x 266.9975pt>
+File: linear_4.png Graphic file (type png)
+ <use linear_4.png>
+Package pdftex.def Info: linear_4.png used on input line 160.
+(pdftex.def)             Requested size: 334.60571pt x 239.91255pt.
+ [6 <./linear_2.png> <./linear_3.png>] <rbf_1.png, id=39, 379.4175pt x 266.9975
+pt>
+File: rbf_1.png Graphic file (type png)
+
+<use rbf_1.png>
+Package pdftex.def Info: rbf_1.png used on input line 168.
+(pdftex.def)             Requested size: 334.60571pt x 235.46776pt.
+ <rbf_2.png, id=40, 379.4175pt x 266.9975pt>
+File: rbf_2.png Graphic file (type png)
+ <use rbf_2.png>
+Package pdftex.def Info: rbf_2.png used on input line 174.
+(pdftex.def)             Requested size: 334.60571pt x 235.46776pt.
+
+<rbf_3.png, id=41, 379.4175pt x 266.9975pt>
+File: rbf_3.png Graphic file (type png)
+ <use rbf_3.png>
+Package pdftex.def Info: rbf_3.png used on input line 180.
+(pdftex.def)             Requested size: 334.60571pt x 235.46776pt.
+ [7 <./linear_4.png> <./rbf_1.png>] <rbf_4.png, id=48, 372.39125pt x 266.9975pt
+>
+File: rbf_4.png Graphic file (type png)
+ <use rbf_4.png>
+Package pdftex.def Info: rbf_4.png used on input line 186.
+(pdftex.def)             Requested size: 334.60571pt x 239.91255pt.
+
+[8 <./rbf_2.png> <./rbf_3.png>] <poly_1.png, id=54, 379.4175pt x 266.9975pt>
+File: poly_1.png Graphic file (type png)
+
+<use poly_1.png>
+Package pdftex.def Info: poly_1.png used on input line 194.
+(pdftex.def)             Requested size: 334.60571pt x 235.46776pt.
+ <poly_2.png, id=55, 379.4175pt x 266.9975pt>
+File: poly_2.png Graphic file (type png)
+ <use poly_2.png>
+Package pdftex.def Info: poly_2.png used on input line 200.
+(pdftex.def)             Requested size: 334.60571pt x 235.46776pt.
+
+<poly_3.png, id=56, 379.4175pt x 266.9975pt>
+File: poly_3.png Graphic file (type png)
+ <use poly_3.png>
+Package pdftex.def Info: poly_3.png used on input line 206.
+(pdftex.def)             Requested size: 334.60571pt x 235.46776pt.
+ [9 <./rbf_4.png> <./poly_1.png>] <poly_4.png, id=62, 372.39125pt x 266.9975pt>
+File: poly_4.png Graphic file (type png)
+ <use poly_4.png>
+Package pdftex.def Info: poly_4.png used on input line 212.
+(pdftex.def)             Requested size: 334.60571pt x 239.91255pt.
+
+[10 <./poly_2.png> <./poly_3.png>]
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 10.07397pt on input line 219.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 7.63599pt on input line 219.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 219.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 10.07397pt on input line 219.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 7.63599pt on input line 219.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 219.
+LaTeX Font Info:    Try loading font information for TS1+futs on input line 219
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/fourier/ts1futs.fd
+File: ts1futs.fd 2004/03/26 Fontinst v1.926 font definitions for TS1/futs.
+)
+Overfull \hbox (90.52936pt too wide) in paragraph at lines 236--238
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[11 <./poly_4.png>] [12]
+Overfull \hbox (84.74771pt too wide) in paragraph at lines 287--288
+[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (217.72559pt too wide) in paragraph at lines 288--292
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (78.96606pt too wide) in paragraph at lines 294--295
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (55.83948pt too wide) in paragraph at lines 295--296
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (3.80466pt too wide) in paragraph at lines 302--303
+[][][][][][][][][][][][][][] 
+ []
+
+[13] (./NN_BastianLang_151130.aux) ) 
 Here is how much of TeX's memory you used:
- 6331 strings out of 493304
- 91982 string characters out of 6139871
- 194523 words of memory out of 5000000
- 9657 multiletter control sequences out of 15000+600000
- 68080 words of font info for 67 fonts, out of 8000000 for 9000
+ 6540 strings out of 493304
+ 94935 string characters out of 6139871
+ 221014 words of memory out of 5000000
+ 9837 multiletter control sequences out of 15000+600000
+ 87565 words of font info for 94 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 47i,10n,47p,259b,233s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-
-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/ado
-be/utopia/putr8a.pfb>
-Output written on NN_BastianLang_151130.pdf (2 pages, 51127 bytes).
+ 47i,11n,47p,419b,1480s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dv
+ips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/fourier/fouri
+er-ms.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb>
+Output written on NN_BastianLang_151130.pdf (13 pages, 824465 bytes).
 PDF statistics:
- 17 PDF objects out of 1000 (max. 8388607)
- 10 compressed objects within 1 object stream
+ 90 PDF objects out of 1000 (max. 8388607)
+ 39 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 86 words of extra memory for PDF output out of 10000 (max. 10000000)
 

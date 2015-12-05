@@ -79,24 +79,42 @@ def fit_and_predict(samples, kernel_type):
     plt.title(kernel_type)
     ax1 = fig1.add_subplot(111)
     ax1.scatter(samples[3],samples[4], c=prediction.astype(np.float))
+    
+def fit_and_predict_polynomial(samples, degree):
+    training = np.array([samples[0], samples[1]], dtype='float64').T
+    clf = SVC(kernel='poly', degree=degree).fit(training, np.array(samples[2], dtype='float64'))
+    prediction = clf.predict(np.array([samples[3],samples[4]], dtype='float64').T)
+    fig1 = plt.figure()
+    plt.title('polynomiar with degree: ' + str(degree))
+    ax1 = fig1.add_subplot(111)
+    ax1.scatter(samples[3],samples[4], c=prediction.astype(np.float))
 
 set1=plot_points_with_specified_separaration(0)
-set2=plot_points_with_specified_separaration((-1) * (RADIUS-0.5*WIDTH))
-set3=plot_points_with_specified_separaration((-1) * (RADIUS+0.5*WIDTH))
+set2=plot_points_with_specified_separaration((-0.5) * (RADIUS-0.5*WIDTH))
+set3=plot_points_with_specified_separaration((-1) * (RADIUS-0.5*WIDTH))
+set4=plot_points_with_specified_separaration((-1) * (RADIUS+0.5*WIDTH))
 
-fit_and_predict(set1, 'linear')
-fit_and_predict(set2, 'linear')
-fit_and_predict(set3, 'linear')
+#fit_and_predict(set1, 'linear')
+#fit_and_predict(set2, 'linear')
+#fit_and_predict(set3, 'linear')
+#fit_and_predict(set4, 'linear')
 
-fit_and_predict(set1, 'rbf')
-fit_and_predict(set2, 'rbf')
-fit_and_predict(set3, 'rbf')
+#fit_and_predict(set1, 'rbf')
+#fit_and_predict(set2, 'rbf')
+#fit_and_predict(set3, 'rbf')
+#fit_and_predict(set4, 'rbf')
 
 #fit_and_predict(set1, 'poly')
 #fit_and_predict(set2, 'poly')
 #fit_and_predict(set3, 'poly')
+#fit_and_predict(set4, 'poly')
 
 #fit_and_predict(set1, 'sigmoid')
 #fit_and_predict(set2, 'sigmoid')
 #fit_and_predict(set3, 'sigmoid')
+#fit_and_predict(set4, 'sigmoid')
 
+fit_and_predict_polynomial(set1, 5)
+fit_and_predict_polynomial(set2, 5)
+#fit_and_predict_polynomial(set3, 5)
+#fit_and_predict_polynomial(set4, 5)

@@ -41,6 +41,7 @@
 \renewcommand{\headrulewidth}{0pt} % Remove header underlines
 \renewcommand{\footrulewidth}{0pt} % Remove footer underlines
 \setlength{\headheight}{13.6pt} % Customize the height of the header
+\usepackage{float}
 
 \numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
 \numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
@@ -82,7 +83,7 @@ The graphs below represent three different one-dimensional classification
 What is the lowest-order polynomial decision function that can correctly classify the
 given data? Black dots denote class 1 with target function value y1 = +1 and white dots
 depict class 2 with targets y2 = -1. What are the decision boundaries?
-\begin{figure}[ht]
+\begin{figure}[H]
 	\centering
   \includegraphics[width=0.8\textwidth]{exercise2.png}
 	\caption{}
@@ -101,7 +102,228 @@ The order depends on the number of turning points. For one turning point a polyn
 The number of hidden layer neurons equals the order of the polynomial needed -1.
 
 \section{Exercise 3}
+\subsection{Results}
+For the linear kernel the decision boundary obviously is a line, which works good if the separation is 0, but the worse the more the two figures are intermixed.\vspace{5mm}
+
+RBF works well for all figures but the one were the figures are overlapping.\vspace{5mm}
+
+Using polynomial kernel with default degree of 3 I would have expected a better fit, but even low separation results in some errors, the overleaping figures do look similar to the linear kernel version.\\ Looking at the data increasing the degree should not help because degree 3 should be sufficient. But my laptop is not able to come up with a result within 10 minutes for higher degree.\\
+Maybe just repeating with degree 3 several times will yield better results.
+\subsection{Output}
+\subsubsection{Sampled Pairs}
+\begin{figure}[H]
+	\centering
+  \includegraphics[width=0.8\textwidth]{samples_1.png}
+	\caption{Test data with vertical separation = 0}
+	\label{fig_s1}
+\end{figure}
+\begin{figure}[H]
+	\centering
+  \includegraphics[width=0.8\textwidth]{samples_2.png}
+	\caption{Test data with vertical separation = -1/2 * (radius - 1/2*width)}
+	\label{fig_s2}
+\end{figure}
+\begin{figure}[H]
+	\centering
+  \includegraphics[width=0.8\textwidth]{samples_3.png}
+	\caption{Test data with vertical separation = - radius of inner half circle}
+	\label{fig_s3}
+\end{figure}
+\begin{figure}[H]
+	\centering
+  \includegraphics[width=0.8\textwidth]{samples_4.png}
+	\caption{Test data with vertical separation = - radius of outer half circle}
+	\label{fig_s4}
+\end{figure}
+
+\subsubsection{Linear Kernel}
+\begin{figure}[H]
+	\centering
+  \includegraphics[width=0.8\textwidth]{linear_1.png}
+	\caption{Classified test pairs with vertical separation = 0 using linear kernel}
+	\label{fig_l1}
+\end{figure}
+\begin{figure}[H]
+	\centering
+  \includegraphics[width=0.8\textwidth]{linear_2.png}
+	\caption{Classified test pairs with vertical separation = -1/2 * (radius - 1/2*width) using linear kernel}
+	\label{fig_l2}
+\end{figure}
+\begin{figure}[H]
+	\centering
+  \includegraphics[width=0.8\textwidth]{linear_3.png}
+	\caption{Classified test pairs with vertical separation = - radius of inner half circle using linear kernel}
+	\label{fig_l3}
+\end{figure}
+\begin{figure}[H]
+	\centering
+  \includegraphics[width=0.8\textwidth]{linear_4.png}
+	\caption{Classified test pairs with vertical separation = - radius of outer half circle using linear kernel}
+	\label{fig_l4}
+\end{figure}
+
+\subsubsection{RBF}
+\begin{figure}[H]
+	\centering
+  \includegraphics[width=0.8\textwidth]{rbf_1.png}
+	\caption{Classified test pairs with vertical separation = 0 using rbf kernel}
+	\label{fig_rbf1}
+\end{figure}
+\begin{figure}[H]
+	\centering
+  \includegraphics[width=0.8\textwidth]{rbf_2.png}
+	\caption{Classified test pairs with vertical separation = -1/2 * (radius - 1/2*width) using rbf kernel}
+	\label{fig_rbf2}
+\end{figure}
+\begin{figure}[H]
+	\centering
+  \includegraphics[width=0.8\textwidth]{rbf_3.png}
+	\caption{Classified test pairs with vertical separation = - radius of inner half circle using rbf kernel}
+	\label{fig_rbf3}
+\end{figure}
+\begin{figure}[H]
+	\centering
+  \includegraphics[width=0.8\textwidth]{rbf_4.png}
+	\caption{Classified test pairs with vertical separation = - radius of outer half circle using rbf kernel}
+	\label{fig_rbf4}
+\end{figure}
+
+\subsubsection{Polynomial}
+\begin{figure}[H]
+	\centering
+  \includegraphics[width=0.8\textwidth]{poly_1.png}
+	\caption{Classified test pairs with vertical separation = 0 using polynomial kernel}
+	\label{fig_poly1}
+\end{figure}
+\begin{figure}[H]
+	\centering
+  \includegraphics[width=0.8\textwidth]{poly_2.png}
+	\caption{Classified test pairs with vertical separation = -1/2 * (radius - 1/2*width) using polynomial kernel}
+	\label{fig_poly2}
+\end{figure}
+\begin{figure}[H]
+	\centering
+  \includegraphics[width=0.8\textwidth]{poly_3.png}
+	\caption{Classified test pairs with vertical separation = - radius of inner half circle using polynomial kernel}
+	\label{fig_poly3}
+\end{figure}
+\begin{figure}[H]
+	\centering
+  \includegraphics[width=0.8\textwidth]{poly_4.png}
+	\caption{Classified test pairs with vertical separation = - radius of outer half circle using polynomial kernel}
+	\label{fig_poly4}
+\end{figure}
+
+\subsubsection{Code}
+\begin{lstlisting}
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Dec  3 22:36:41 2015
+
+@author: bastian
+"""
+
+import random
+import numpy as np
+from matplotlib import pyplot as plt
+from sklearn.cluster import KMeans
+from sklearn.svm import *
+
+RADIUS = 10
+WIDTH = 6
+VERTICAL_SEPARATION = 0
+
+# TODO: SVM is supervised -> assign labels according to part of upper or lower half moon
+
+def sample_upper_halfmoon(radius, width):
+    distance = random.random() * width + radius - 0.5 * width
+    angle = random.random() * 180
+    angle = np.radians(angle)
+    x = np.cos(angle) * distance
+    y = np.sin(angle) * distance
+    return [x,y]
+    
+def sample_lower_halfmoon(radius, width, vertical_separation):
+    distance = random.random() * width + radius - 0.5 * width
+    angle = random.random() * 180 + 180
+    angle = np.radians(angle)
+    x = np.cos(angle) * distance + radius
+    y = np.sin(angle) * distance - vertical_separation
+    return [x,y]
+
+    
+def sample_pair(radius, width, vertical_separation):
+    a = sample_upper_halfmoon(radius, width)
+    b = sample_lower_halfmoon(radius, width, vertical_separation)
+    return a,b
+    
+def plot_points_with_specified_separaration(vertical_separation):
+    training_samples_x = []
+    training_samples_y = []
+    training_class = []
+    for i in range(1000):
+        a,b = sample_pair(RADIUS,WIDTH, vertical_separation)
+        training_samples_x.append(a[0])
+        training_samples_x.append(b[0])
+        training_samples_y.append(a[1])
+        training_samples_y.append(b[1])
+        training_class.append(-1)
+        training_class.append(1)
+        
+    test_samples_x = []
+    test_samples_y = []
+    test_class = []
+    for i in range(3000):
+        a,b = sample_pair(RADIUS,WIDTH, vertical_separation)
+        test_samples_x.append(a[0])
+        test_samples_x.append(b[0])
+        test_samples_y.append(a[1])
+        test_samples_y.append(b[1])
+        test_class.append(-1)
+        test_class.append(1)
+        
+    figure = plt.figure()
+    ax = figure.add_subplot(111)
+    ax.scatter(test_samples_x, test_samples_y, c=np.array(test_class).astype(np.float))
+    return  training_samples_x, training_samples_y, training_class, test_samples_x, test_samples_y, test_class
 
 
+
+def fit_and_predict(samples, kernel_type):
+    training = np.array([samples[0], samples[1]], dtype='float64').T
+    clf = SVC(kernel=kernel_type).fit(training, np.array(samples[2], dtype='float64'))
+    prediction = clf.predict(np.array([samples[3],samples[4]], dtype='float64').T)
+    fig1 = plt.figure()
+    plt.title(kernel_type)
+    ax1 = fig1.add_subplot(111)
+    ax1.scatter(samples[3],samples[4], c=prediction.astype(np.float))
+
+set1=plot_points_with_specified_separaration(0)
+set2=plot_points_with_specified_separaration((-0.5) * (RADIUS-0.5*WIDTH))
+set3=plot_points_with_specified_separaration((-1) * (RADIUS-0.5*WIDTH))
+set4=plot_points_with_specified_separaration((-1) * (RADIUS+0.5*WIDTH))
+
+fit_and_predict(set1, 'linear')
+fit_and_predict(set2, 'linear')
+fit_and_predict(set3, 'linear')
+fit_and_predict(set4, 'linear')
+
+fit_and_predict(set1, 'rbf')
+fit_and_predict(set2, 'rbf')
+fit_and_predict(set3, 'rbf')
+fit_and_predict(set4, 'rbf')
+
+fit_and_predict(set1, 'poly')
+fit_and_predict(set2, 'poly')
+fit_and_predict(set3, 'poly')
+fit_and_predict(set4, 'poly')
+
+fit_and_predict(set1, 'sigmoid')
+fit_and_predict(set2, 'sigmoid')
+fit_and_predict(set3, 'sigmoid')
+fit_and_predict(set4, 'sigmoid')
+
+
+\end{lstlisting}
 
 \end{document}
